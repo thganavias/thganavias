@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Θεοφάνης Γκαναβίας — Βιογραφικό</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f1a; --bg2:#121829; --card:#161d31; --line:#243049;
+    --txt:#e8edf7; --mut:#9aa7c2; --accent:#5b9dff; --accent2:#7ce0c3; --gold:#e8b84b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Spline Sans',sans-serif;background:var(--bg);color:var(--txt);
+    line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(900px 500px at 12% -5%, rgba(91,157,255,.16), transparent 60%),
+      radial-gradient(800px 500px at 95% 8%, rgba(124,224,195,.12), transparent 55%),
+      var(--bg);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(11,15,26,.72);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1000px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:'Sora';font-weight:800;letter-spacing:.3px;font-size:1.05rem}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:8px}
+  .nav-links a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;
+    padding:8px 16px;border-radius:999px;transition:.25s;border:1px solid transparent}
+  .nav-links a:hover{color:var(--txt);border-color:var(--line);background:var(--card)}
+  .nav-links a.cta{color:#06121f;background:linear-gradient(120deg,var(--accent),var(--accent2));font-weight:600}
+  .nav-links a.cta:hover{filter:brightness(1.08)}
+
+  /* HERO */
+  header{padding:70px 0 50px;position:relative}
+  .hero{display:flex;gap:48px;align-items:center;flex-wrap:wrap}
+  .photo-frame{flex:0 0 auto;position:relative}
+  .photo-frame::before{content:"";position:absolute;inset:-6px;border-radius:50%;
+    background:conic-gradient(from 200deg,var(--accent),var(--accent2),var(--gold),var(--accent));
+    filter:blur(2px);opacity:.85;animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .photo{position:relative;width:190px;height:190px;border-radius:50%;object-fit:cover;
+    object-position:center 28%;border:4px solid var(--bg);display:block;
+    box-shadow:0 18px 50px rgba(0,0,0,.55)}
+  .intro{flex:1;min-width:280px}
+  .eyebrow{font-family:'Sora';color:var(--accent2);font-weight:600;letter-spacing:3px;
+    text-transform:uppercase;font-size:.74rem;margin-bottom:14px}
+  h1{font-family:'Sora';font-weight:800;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.05;
+    letter-spacing:-.5px;margin-bottom:14px}
+  h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .role{color:var(--mut);font-size:1.08rem;margin-bottom:22px;font-weight:500}
+  .tags{display:flex;flex-wrap:wrap;gap:10px}
+  .tag{font-size:.8rem;color:var(--txt);background:var(--card);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;font-weight:500}
+  .tag b{color:var(--accent)}
+
+  /* SECTIONS */
+  section.block{padding:34px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+  .sec-head .dot{width:10px;height:10px;border-radius:50%;
+    background:linear-gradient(120deg,var(--accent),var(--accent2));box-shadow:0 0 16px var(--accent)}
+  h2{font-family:'Sora';font-weight:700;font-size:1.5rem;letter-spacing:-.3px}
+  .lead{color:var(--mut);max-width:75ch}
+  .lead+.lead{margin-top:14px}
+  .lead b{color:var(--txt)}
+
+  /* TIMELINE */
+  .tl{display:flex;flex-direction:column;gap:0}
+  .tl-item{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:16px 0;
+    border-bottom:1px dashed var(--line)}
+  .tl-item:last-child{border-bottom:none}
+  .tl-year{font-family:'Sora';font-weight:700;color:var(--accent);font-size:.95rem}
+  .tl-body h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+  .tl-body p{color:var(--mut);font-size:.94rem}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;
+    transition:.3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);
+    transform-origin:left;transition:.35s}
+  .card:hover{transform:translateY(-4px);border-color:#34456a}
+  .card:hover::before{transform:scaleX(1)}
+  .card h3{font-family:'Sora';font-size:1.05rem;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:.92rem}
+  .card .meta{color:var(--accent2);font-size:.8rem;font-weight:600;margin-bottom:10px;
+    text-transform:uppercase;letter-spacing:1px}
+
+  /* CHIPS */
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-size:.84rem;background:var(--bg2);border:1px solid var(--line);color:var(--txt);
+    padding:7px 13px;border-radius:8px;transition:.2s}
+  .chip:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* PUBLICATION */
+  .pub{background:linear-gradient(135deg,rgba(91,157,255,.08),rgba(124,224,195,.05));
+    border:1px solid var(--line);border-radius:16px;padding:24px}
+  .pub .authors b{color:var(--accent)}
+  .pub .title{font-weight:600;color:var(--txt);margin:6px 0}
+  .pub .venue{color:var(--mut);font-size:.9rem;font-style:italic}
+  .pub details{margin-top:14px}
+  .pub summary{cursor:pointer;color:var(--accent2);font-weight:600;font-size:.9rem}
+  .pub details p{color:var(--mut);font-size:.92rem;margin-top:10px}
+
+  .quote{border-left:3px solid var(--accent);padding:6px 0 6px 20px;margin:6px 0 16px;
+    font-family:'Sora';font-weight:600;font-size:1.12rem;color:var(--txt)}
+
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:12px}
+  ul.clean li{padding-left:26px;position:relative;color:var(--mut)}
+  ul.clean li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;
+    border-radius:2px;background:linear-gradient(120deg,var(--accent),var(--accent2))}
+  ul.clean li b{color:var(--txt)}
+
+  footer{padding:40px 0 60px;border-top:1px solid var(--line);text-align:center;color:var(--mut);font-size:.85rem}
+  .reveal{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:640px){
+    .tl-item{grid-template-columns:1fr;gap:4px}
+    .nav-links a:not(.cta){display:none}
+    .photo{width:150px;height:150px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">Θ. <span>Γκαναβίας</span></div>
+    <div class="nav-links">
+      <a href="#about">Προφίλ</a>
+      <a href="#research">Έρευνα</a>
+      <a href="#pub">Δημοσιεύσεις</a>
+      <a href="contact.html" class="cta">Επικοινωνία</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="hero">
+      <div class="photo-frame">
+        <img class="photo" src="assets/profile.jpg" alt="Θεοφάνης Γκαναβίας">
+      </div>
+      <div class="intro">
+        <div class="eyebrow">Πληροφορικός · Υποψήφιος Διδάκτορας</div>
+        <h1>Θεοφάνης <span class="grad">Γκαναβίας</span></h1>
+        <p class="role">Καθηγητής Πληροφορικής (ΠΕ86) · Εκπαιδευτής Ενηλίκων</p>
+        <div class="tags">
+          <span class="tag"><b>MSc</b> Πληροφορική &amp; Δίκτυα</span>
+          <span class="tag"><b>7,87</b> Λίαν Καλώς</span>
+          <span class="tag">Ασφάλεια Δικτύων</span>
+          <span class="tag">Τεχνητή Νοημοσύνη</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="block reveal" id="about">
+    <div class="sec-head"><span class="dot"></span><h2>Σύντομη Περιγραφή</h2></div>
+    <p class="lead">Πτυχιούχος Εφαρμογών Πληροφορικής στη Διοίκηση και την Οικονομία (Τ.Ε.Ι. Μεσολογγίου) και κάτοχος <b>Μεταπτυχιακού Διπλώματος Ειδίκευσης στην «Πληροφορική και Δίκτυα»</b> (Πανεπιστήμιο Ιωαννίνων), με παιδαγωγική και διδακτική επάρκεια (Ε.Π.ΠΑΙ.Κ. – Α.Σ.ΠΑΙ.Τ.Ε.). Διδάσκω Πληροφορική στη δευτεροβάθμια εκπαίδευση και σε δομές εκπαίδευσης ενηλίκων, ενταγμένος στα Μητρώα Εκπαιδευτών του Ε.Κ.Δ.Δ.Α., των Σ.Α.Ε.Κ. και των Σ.Δ.Ε.</p>
+    <p class="lead">Τα ερευνητικά μου ενδιαφέροντα εστιάζονται στους <b>αποκεντρωμένους μηχανισμούς κατανομής πόρων</b> με κριτήρια κοινωνικής πρόνοιας και δικαιοσύνης, στην <b>ασφάλεια δικτύων</b> και στην εφαρμογή της <b>τεχνητής νοημοσύνης</b>.</p>
+  </section>
+
+  <section class="block reveal" id="education">
+    <div class="sec-head"><span class="dot"></span><h2>Εκπαίδευση</h2></div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-body">
+        <h3>Μ.Δ.Ε. «Πληροφορική και Δίκτυα» — 7,87 (Λίαν Καλώς)</h3>
+        <p>Τμήμα Πληροφορικής &amp; Τηλεπικοινωνιών, Πανεπιστήμιο Ιωαννίνων</p></div></div>
+      <div class="tl-item"><div class="tl-year">2017</div><div class="tl-body">
+        <h3>Πιστοποιητικό Παιδαγωγικής &amp; Διδακτικής Επάρκειας (Ε.Π.ΠΑΙ.Κ.)</h3>
+        <p>Α.Σ.ΠΑΙ.Τ.Ε.</p></div></div>
+      <div class="tl-item"><div class="tl-year">2007</div><div class="tl-body">
+        <h3>Πτυχίο Εφαρμογών Πληροφορικής στη Διοίκηση &amp; Οικονομία</h3>
+        <p>Σχολή Διοίκησης &amp; Οικονομίας, Τ.Ε.Ι. Μεσολογγίου</p></div></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="research">
+    <div class="sec-head"><span class="dot"></span><h2>Ερευνητικά Ενδιαφέροντα</h2></div>
+    <div class="grid">
+      <div class="card"><div class="meta">Mechanism Design</div><h3>Κατανομή Πόρων</h3><p>Αποκεντρωμένοι μηχανισμοί με κριτήρια κοινωνικής πρόνοιας και δικαιοσύνης.</p></div>
+      <div class="card"><div class="meta">Algorithms</div><h3>Θεωρία Παιγνίων</h3><p>Βελτιστοποίηση &amp; κατανεμημένοι αλγόριθμοι σε δίκτυα, συμπ. δικτύων ενέργειας.</p></div>
+      <div class="card"><div class="meta">Security</div><h3>Ασφάλεια Δικτύων</h3><p>VPN, κρυπτογράφηση, έλεγχος ταυτότητας και υποδομές επικοινωνιών.</p></div>
+      <div class="card"><div class="meta">AI / ML</div><h3>Τεχνητή Νοημοσύνη</h3><p>Μηχανική μάθηση σε περιβαλλοντικά συστήματα πρόβλεψης.</p></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="phd">
+    <div class="sec-head"><span class="dot"></span><h2>Προτεινόμενη Διδακτορική Έρευνα</h2></div>
+    <p class="quote">«Αποκεντρωμένοι Μηχανισμοί Ενεργειακής Κατανομής Βασισμένοι στην Κοινωνική Πρόνοια κάτω από Περιορισμούς Δικαιοσύνης»</p>
+    <p class="lead">Επιβλέπων: <b>Δρ. Λάμπρος Δρόσος</b> — Τμήμα Ηλεκτρολόγων Μηχανικών &amp; Μηχανικών Υπολογιστών, Πανεπιστήμιο Πελοποννήσου. Μελέτη αποκεντρωμένων μηχανισμών κατανομής ενεργειακών πόρων που μεγιστοποιούν την κοινωνική πρόνοια υπό περιορισμούς δικαιοσύνης, συνδυάζοντας θεωρία παιγνίων, σχεδιασμό μηχανισμών και βελτιστοποίηση.</p>
+  </section>
+
+  <section class="block reveal" id="pub">
+    <div class="sec-head"><span class="dot"></span><h2>Δημοσιεύσεις</h2></div>
+    <div class="pub">
+      <p class="authors"><b>Γκαναβίας Θ.</b>, Τσαμαδιάς Σ., Χατζής Ι. &amp; Γκαναβίας Δ. (2025)</p>
+      <p class="title">«Καινοτόμος Μετεωρολογικός Σταθμός: Χρήση Τεχνητής Νοημοσύνης για Εκτίμηση Πρόβλεψης Πυρκαγιών»</p>
+      <p class="venue">Πρακτικά 10ου Διεθνούς Συνεδρίου Ε.Ε.Π.Ε.Κ., Τόμος Β, Λάρισα, σελ. 9 · ISBN 978-618-5562-21-2</p>
+      <details>
+        <summary>Περισσότερα για τη δημοσίευση ▾</summary>
+        <p>Σύστημα πρόβλεψης πυρκαγιών που συνδυάζει περιβαλλοντικούς αισθητήρες (θερμοκρασία, υγρασία, άνεμος, PM, CO₂) με τεχνητή νοημοσύνη. Υλοποίηση με <b>ESP32-C3</b> &amp; <b>Raspberry Pi 4</b>, μοντέλα <b>Holt-Winters</b> &amp; <b>Prophet</b>, δείκτη <b>Fire Weather Index (FWI)</b> και μεγάλα γλωσσικά μοντέλα (<b>LLaVA-Phi3</b>, <b>Mistral</b>) με τεχνική <b>RAG</b> και AI agents. Δημόσια διάθεση δεδομένων σε πραγματικό χρόνο.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="block reveal" id="theses">
+    <div class="sec-head"><span class="dot"></span><h2>Διπλωματικές Εργασίες</h2></div>
+    <div class="grid">
+      <div class="card">
+        <div class="meta">MSc · 2026</div>
+        <h3>Ασφάλεια Δικτύου Υπολογιστών</h3>
+        <p>Σχεδίαση &amp; υλοποίηση ασφαλούς <b style="color:var(--accent2)">VPN με WireGuard</b> σε επιχειρηματικό περιβάλλον· κρυπτογράφηση, έλεγχος ταυτότητας, δοκιμές ασφαλείας (packet capture) και αξιολόγηση απόδοσης. Επιβλέπων: Καθ. Ε. Στεργίου.</p>
+      </div>
+      <div class="card">
+        <div class="meta">BSc · 2007 · Βαθμός 10</div>
+        <h3>Βιντεοδιάσκεψη σε Δίκτυα ΑΤΜ</h3>
+        <p>Μελέτη τηλεματικών υπηρεσιών σε δίκτυα ΑΤΜ/B-ISDN, τρόπων πρόσβασης συνδρομητών και αρχιτεκτονικής τερματικών διατάξεων. Εισηγητής: Δρ. Λ. Δρόσος.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="exp">
+    <div class="sec-head"><span class="dot"></span><h2>Επαγγελματική Εμπειρία</h2></div>
+    <div class="tl">
+      <div class="tl-item"><div class="tl-year">2020 – σήμερα</div><div class="tl-body"><h3>Υπάλληλος — Ε.Ο.Δ.Υ.</h3><p>Υπουργείο Υγείας</p></div></div>
+      <div class="tl-item"><div class="tl-year">2015 – σήμερα</div><div class="tl-body"><h3>Καθηγητής Πληροφορικής (ΠΕ86) &amp; Εκπαιδευτής Ενηλίκων</h3><p>Δευτεροβάθμια εκπαίδευση · Σ.Δ.Ε. · Σ.Α.Ε.Κ. · ΙΝΕΔΙΒΙΜ</p></div></div>
+      <div class="tl-item"><div class="tl-year">2012 – 2019</div><div class="tl-body"><h3>Επιθεωρητής Πωλήσεων &amp; Διεύθυνση Γραφείου</h3><p>Ασφαλιστικός κλάδος, Δυτική Στερεά Ελλάδα</p></div></div>
+      <div class="tl-item"><div class="tl-year">2008 – 2009</div><div class="tl-body"><h3>Τεχνικός Δικτύων (πρακτική)</h3><p>Ο.Τ.Ε. Α.Ε., Μεσολόγγι</p></div></div>
+    </div>
+  </section>
+
+  <section class="block reveal" id="skills">
+    <div class="sec-head"><span class="dot"></span><h2>Τεχνικές Δεξιότητες</h2></div>
+    <div class="chips">
+      <span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span>
+      <span class="chip">Python</span><span class="chip">PHP</span><span class="chip">SQL</span>
+      <span class="chip">HTML</span><span class="chip">Linux</span><span class="chip">WireGuard / VPN</span>
+      <span class="chip">LLMs · Mistral · LLaVA-Phi3</span><span class="chip">RAG · VectorDB</span>
+      <span class="chip">CrewAI</span><span class="chip">Holt-Winters · Prophet</span>
+      <span class="chip">ESP32-C3</span><span class="chip">Raspberry Pi</span>
+      <span class="chip">Streamlit</span><span class="chip">Joomla</span>
+    </div>
+  </section>
+
+  <section class="block reveal" id="extra">
+    <div class="sec-head"><span class="dot"></span><h2>Μητρώα &amp; Λοιπά</h2></div>
+    <ul class="clean">
+      <li>Μέλος <b>Μητρώου Κύριου Διδακτικού Προσωπικού Ε.Κ.Δ.Δ.Α.</b> (κωδ. 029018) — Πληροφορική &amp; Εκπαίδευση Ενηλίκων</li>
+      <li>Μέλος <b>Μητρώου Εκπαιδευτών Σ.Α.Ε.Κ.</b> &amp; <b>Σ.Δ.Ε.</b> (Πληροφορική)</li>
+      <li>Ξένες γλώσσες: <b>Αγγλικά</b> (Lower / Proficiency)</li>
+      <li>Άδειες οδήγησης: <b>Ε' κατηγορίας φορτηγού</b> &amp; μοτοσικλέτας</li>
+      <li>Κοινωνική προσφορά: εθελοντής πυροσβέστης, διαιτητής βόλεϊ, μέλος αθλητικών &amp; χορευτικών συλλόγων</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Θεοφάνης Γκαναβίας · Ι. Π. Μεσολογγίου · 2026 &nbsp;·&nbsp; <a href="contact.html" style="color:var(--accent);text-decoration:none">Επικοινωνία →</a></div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

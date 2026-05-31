@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Επικοινωνία — Θεοφάνης Γκαναβίας</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f1a;--bg2:#121829;--card:#161d31;--line:#243049;
+    --txt:#e8edf7;--mut:#9aa7c2;--accent:#5b9dff;--accent2:#7ce0c3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Spline Sans',sans-serif;background:var(--bg);color:var(--txt);
+    min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;
+    background:
+      radial-gradient(900px 500px at 15% -5%,rgba(91,157,255,.18),transparent 60%),
+      radial-gradient(800px 500px at 90% 100%,rgba(124,224,195,.13),transparent 55%),var(--bg)}
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(11,15,26,.72);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1000px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:'Sora';font-weight:800;font-size:1.05rem}
+  .brand span{color:var(--accent)}
+  .nav-links a{color:var(--mut);text-decoration:none;font-weight:500;font-size:.92rem;
+    padding:8px 16px;border-radius:999px;transition:.25s;border:1px solid transparent}
+  .nav-links a:hover{color:var(--txt);border-color:var(--line);background:var(--card)}
+
+  main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+  .panel{max-width:620px;width:100%;text-align:center}
+  .eyebrow{font-family:'Sora';color:var(--accent2);font-weight:600;letter-spacing:3px;
+    text-transform:uppercase;font-size:.74rem;margin-bottom:16px}
+  h1{font-family:'Sora';font-weight:800;font-size:clamp(2rem,5vw,3rem);margin-bottom:14px;letter-spacing:-.5px}
+  h1 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{color:var(--mut);margin-bottom:40px;font-size:1.05rem}
+
+  .methods{display:flex;flex-direction:column;gap:16px;text-align:left}
+  .method{display:flex;align-items:center;gap:18px;background:var(--card);
+    border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+    text-decoration:none;color:var(--txt);transition:.3s;position:relative;overflow:hidden}
+  .method::before{content:"";position:absolute;left:0;top:0;height:100%;width:4px;
+    background:linear-gradient(180deg,var(--accent),var(--accent2));transform:scaleY(0);
+    transform-origin:top;transition:.35s}
+  .method:hover{transform:translateX(6px);border-color:#34456a}
+  .method:hover::before{transform:scaleY(1)}
+  .ic{flex:0 0 auto;width:52px;height:52px;border-radius:13px;display:grid;place-items:center;
+    background:linear-gradient(135deg,rgba(91,157,255,.18),rgba(124,224,195,.12));
+    border:1px solid var(--line)}
+  .ic svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:1.8}
+  .m-txt .lbl{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+  .m-txt .val{font-family:'Sora';font-size:1.18rem;font-weight:600;margin-top:3px}
+  .arrow{margin-left:auto;color:var(--mut);font-size:1.4rem;transition:.3s}
+  .method:hover .arrow{color:var(--accent);transform:translateX(4px)}
+
+  .back{display:inline-block;margin-top:36px;color:var(--accent);text-decoration:none;
+    font-weight:600;font-size:.95rem;transition:.2s}
+  .back:hover{letter-spacing:.5px}
+  footer{padding:28px;text-align:center;color:var(--mut);font-size:.82rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">Θ. <span>Γκαναβίας</span></div>
+    <div class="nav-links"><a href="index.html">← Βιογραφικό</a></div>
+  </div>
+</nav>
+
+<main>
+  <div class="panel">
+    <div class="eyebrow">Ας μιλήσουμε</div>
+    <h1>Επικοινω<span class="grad">νία</span></h1>
+    <p class="sub">Μπορείτε να επικοινωνήσετε μαζί μου με ένα κλικ — email ή τηλεφωνική κλήση.</p>
+
+    <div class="methods">
+      <a class="method" href="mailto:th.ganavias@gmail.com">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <span class="m-txt"><div class="lbl">Email</div><div class="val">th.ganavias@gmail.com</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="method" href="tel:+306973985859">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="m-txt"><div class="lbl">Τηλέφωνο</div><div class="val">697 398 5859</div></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="method" href="https://maps.google.com/?q=Μεσολόγγι" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span class="m-txt"><div class="lbl">Τοποθεσία</div><div class="val">Μεσολόγγι, Ελλάδα</div></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <a class="back" href="index.html">← Επιστροφή στο βιογραφικό</a>
+  </div>
+</main>
+
+<footer>Θεοφάνης Γκαναβίας · 2026</footer>
+</body>
+</html>
